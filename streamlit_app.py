@@ -24,7 +24,7 @@ st.write('国別のデータ')
 st.button('ロシア')
 st.button('ブラジル')
 st.button('日本')
-st.button('ブルガリア'
+st.button('ブルガリア')
 st.button('セルビア')
 st.button('メキシコ')
 st.button('キューバ')
