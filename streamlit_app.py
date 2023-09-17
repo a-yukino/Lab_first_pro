@@ -1,7 +1,6 @@
 import streamlit as st
 
-st.title("title") # タイトル
-st.header("header") # ヘッダー
-st.write("write") # 表示
-st.markdown("# markdown") # マークダウンで表示
-st.text("text") # テキスト表示
+st.title("女子FIVB選手のデータ分析ツール") # タイトル
+
+st.write("分析したいファイルをアップロードしてください。")
+st.file_uploader("Choose file") # ファイルアップロード
