@@ -20,27 +20,41 @@ st.title('バレーボールW杯出場女子選手のデータ一覧')
 st.write(df1)
 
 st.write('国別のデータ')
+
+st.button('ロシア')
+st.button('ブラジル')
+st.button('日本')
+st.button('ブルガリア'
+st.button('セルビア')
+st.button('メキシコ')
+st.button('キューバ')
+st.button('中国')
+st.button('エジプト')
+st.button('ペルー')
+st.button('イタリア')
+st.button('トルコ')
+          
 if st.button('ロシア'):
-  st.write(df2)
+   st.write(df2)
 if st.button('ブラジル'):
-  st.write(df3)
+   st.write(df3)
 if st.button('日本'):
-  st.write(df4)
+   st.write(df4)
 if st.button('ブルガリア'):
-  st.write(df5)
+   st.write(df5)
 if st.button('セルビア'):
-  st.write(df6)
+   st.write(df6)
 if st.button('メキシコ'):
-  st.write(df7)
+   st.write(df7)
 if st.button('キューバ'):
-  st.write(df8)
+   st.write(df8)
 if st.button('中国'):
-  st.write(df9)
+   st.write(df9)
 if st.button('エジプト'):
-  st.write(df10)
+   st.write(df10)
 if st.button('ペルー'):
-  st.write(df11)
+   st.write(df11)
 if st.button('イタリア'):
-  st.write(df12)
+   st.write(df12)
 if st.button('トルコ'):
-  st.write(df13)
+   st.write(df13)
