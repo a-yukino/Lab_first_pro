@@ -1,17 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import time
-from PIL import Image
- 
-image = Image.open('volley.jpg')
-st.set_page_config(
-    page_title="Volleyball data", 
-    page_icon=image, 
-    layout="wide", 
-    initial_sidebar_state="auto", 
-     )
-
 
 df = pd.read_csv('clean_data.csv',encoding='shift_jis')
 
