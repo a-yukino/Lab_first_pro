@@ -2,6 +2,23 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+primaryColor="#ff0000" # 赤
+backgroundColor="#000000" # 黒
+secondaryBackgroundColor="#696969" # ダークグレー
+textColor="#FFFFFF" # 白
+
+import time
+from PIL import Image
+ 
+image = Image.open('volley.jpg')
+st.set_page_config(
+    page_title="Volleyball data", 
+    page_icon=image, 
+    layout="wide", 
+    initial_sidebar_state="auto", 
+     )
+
+
 df = pd.read_csv('clean_data.csv',encoding='shift_jis')
 
 st.title('バレーボールW杯出場女子選手のデータ一覧')
