@@ -45,13 +45,3 @@ if st.button('イタリア'):
 if st.button('トルコ'):
     df = pd.read_csv('pro_12.csv',encoding='shift_jis')
     st.write(df)
-
-st.markdown("# 国別の身長とスパイクの最高到達点の関係のグラフ")
-st.markdown("### グラフデータ")
-st.area_chart(data=pd.read_csv('pro_8.csv',encoding='shift_jis'),
-              x="height",               # X軸
-              y="spike",               # Y軸
-              width=0,                     # 表示設定（幅）
-              height=0,                    # 表示設定（高さ）
-              use_container_width=True,    # True の場合、グラフの幅を列の幅に設定
-              )
