@@ -10,10 +10,10 @@ st.write(df)
 st.write('国別のデータ')
 
 if st.button('ロシア'):
-    df = pd.read_csv('pro_1.csv',encoding='shift_jis')
+    df = pd.read_csv('pro-1.csv',encoding='shift_jis')
     st.write(df)
 if st.button('ブラジル'):
-    df = pd.read_csv('pro_2.csv',encoding='shift_jis')
+    df = pd.read_csv('pro-2.csv',encoding='shift_jis')
     st.write(df)
 if st.button('日本'):
     df = pd.read_csv('pro_3.csv',encoding='shift_jis')
