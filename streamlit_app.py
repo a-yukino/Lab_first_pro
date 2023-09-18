@@ -1,12 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-
-primaryColor="#ff0000" # 赤
-backgroundColor="#000000" # 黒
-secondaryBackgroundColor="#696969" # ダークグレー
-textColor="#FFFFFF" # 白
-
 import time
 from PIL import Image
  
