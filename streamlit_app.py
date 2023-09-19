@@ -11,15 +11,15 @@ data = load_data()
 
 # ボタンのクリック状態を管理する変数
 if 'show_data' not in st.session_state:
-    st.session_state.show_data = True
+    st.session_state.show_data = False
 
 # ボタンでデータの表示/非表示を切り替え
-if st.button("データを表示/非表示"):
+if st.button("ロシア"):
     st.session_state.show_data = not st.session_state.show_data  # クリックごとに表示状態をトグル
 
 # データの表示/非表示
 if st.session_state.show_data:
-    st.write("CSVデータの表示:")
+    st.write("ロシア代表のデータ")
     st.write(data)
 else:
-    st.write("CSVデータは非表示です。")
+    st.write("")
