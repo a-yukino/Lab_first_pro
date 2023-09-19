@@ -10,29 +10,30 @@ st.write(df)
 st.write('国別のデータ')
 
 @st.cache
-def load_data():
-    data = pd.read_csv('pro_1.csv', encoding='utf-8')
-    return data
-data = load_data()
-if 'show_data' not in st.session_state:
-    st.session_state.show_data = False
+def load_data1():
+    data1 = pd.read_csv('pro_1.csv', encoding='utf-8')
+    return data1
+data1 = load_data1()
+if 'show_data1' not in st.session_state:
+    st.session_state.show_data1 = False
 if st.button("ロシア"):
-    st.session_state.show_data = not st.session_state.show_data  # クリックごとに表示状態をトグル
-if st.session_state.show_data:
+    st.session_state.show_data1 = not st.session_state.show_data1  # クリックごとに表示状態をトグル
+if st.session_state.show_data1:
     st.write("ロシア代表のデータ")
     st.write(data)
 else:
     st.write("")
-
-def load_data():
-    data = pd.read_csv('pro_2.csv', encoding='utf-8')
-    return data
-data = load_data()
-if 'show_data' not in st.session_state:
-    st.session_state.show_data = False
+    
+@st.cache
+def load_data2():
+    data2 = pd.read_csv('pro_2.csv', encoding='utf-8')
+    return data2
+data = load_data2()
+if 'show_data2' not in st.session_state:
+    st.session_state.show_data2 = False
 if st.button("ブラジル"):
-    st.session_state.show_data = not st.session_state.show_data  # クリックごとに表示状態をトグル
-if st.session_state.show_data:
+    st.session_state.show_data2 = not st.session_state.show_data2  # クリックごとに表示状態をトグル
+if st.session_state.show_data2:
     st.write("ブラジル代表のデータ")
     st.write(data)
 else:
