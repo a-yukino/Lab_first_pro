@@ -10,14 +10,15 @@ def load_data():
 data = load_data()
 
 # ボタンのクリック状態を管理する変数
-show_data = False
+if 'show_data' not in st.session_state:
+    st.session_state.show_data = True
 
 # ボタンでデータの表示/非表示を切り替え
 if st.button("データを表示/非表示"):
-    show_data = not show_data  # クリックごとに表示状態をトグル
+    st.session_state.show_data = not st.session_state.show_data  # クリックごとに表示状態をトグル
 
 # データの表示/非表示
-if show_data:
+if st.session_state.show_data:
     st.write("CSVデータの表示:")
     st.write(data)
 else:
