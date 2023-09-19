@@ -2,6 +2,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+streamlit config set [theme]
+
+[theme]
+backgroundColor = "#CCBCBC"
+font = "Times New Roman"
+textColor = "#000000"
+sidebar = { "backgroundColor": "#FFFFFF", "contrast": 1.2 }
+
 df = pd.read_csv('clean_data.csv',encoding='shift_jis')
 
 st.title('バレーボールW杯出場女子選手のデータ一覧')
