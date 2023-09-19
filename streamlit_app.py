@@ -20,7 +20,7 @@ if st.button("ロシア"):
     st.session_state.show_data1 = not st.session_state.show_data1  # クリックごとに表示状態をトグル
 if st.session_state.show_data1:
     st.write("ロシア代表のデータ")
-    st.write(data)
+    st.write(data1)
 else:
     st.write("")
     
@@ -35,6 +35,6 @@ if st.button("ブラジル"):
     st.session_state.show_data2 = not st.session_state.show_data2  # クリックごとに表示状態をトグル
 if st.session_state.show_data2:
     st.write("ブラジル代表のデータ")
-    st.write(data)
+    st.write(data2)
 else:
     st.write("")
