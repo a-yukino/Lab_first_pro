@@ -1,23 +1,22 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
-# CSVファイルの読み込み
-@st.cache
-def load_data():
-    data = pd.read_csv('pro_1.csv', encoding='utf-8')
-    return data
+# セッション変数を初期化
+if 'button1_clicked' not in st.session_state:
+    st.session_state.button1_clicked = False
 
-data = load_data()
+if 'button2_clicked' not in st.session_state:
+    st.session_state.button2_clicked = False
 
-# ボタンと表示状態を格納する辞書
-button_states = {}
+# ボタン1
+if st.button("ロシア"):
+    st.session_state.button1_clicked = not st.session_state.button1_clicked
 
-# ボタンと表示状態の対応を作成
-for column in data.columns:
-    button_states[column] = st.button(f"表示/非表示: {column}", key=column)
+# ボタン2
+if st.button("ブラジル"):
+    st.session_state.button2_clicked = not st.session_state.button2_clicked
 
-# データの表示/非表示
-for column, show_data in button_states.items():
-    if show_data:
-        st.write(f"CSVデータの表示: {column}")
-        st.write(data[column])
+# ボタンのクリック状態を表示
+st.write(f"ボタン1のクリック状態: {st.session_state.button1_clicked}")
+st.write(f"ボタン2のクリック状態: {st.session_state.button2_clicked}")
