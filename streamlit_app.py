@@ -91,7 +91,7 @@ def load_data6():
 data6 = load_data6()
 if 'show_data6' not in st.session_state:
     st.session_state.show_data6 = False
-if st.button("メキシコ):
+if st.button("メキシコ"):
     st.session_state.show_data6 = not st.session_state.show_data6  # クリックごとに表示状態をトグル
 if st.session_state.show_data6:
     st.write("メキシコ代表のデータ")
