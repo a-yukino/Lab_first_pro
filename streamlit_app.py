@@ -28,7 +28,7 @@ else:
 def load_data2():
     data2 = pd.read_csv('pro_2.csv', encoding='utf-8')
     return data2
-data = load_data2()
+data2 = load_data2()
 if 'show_data2' not in st.session_state:
     st.session_state.show_data2 = False
 if st.button("ブラジル"):
