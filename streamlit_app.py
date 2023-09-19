@@ -10,6 +10,7 @@ data = load_data()
 show_data = False
 if st.button("ロシア"):
     show_data = not show_data  
+    
 if show_data:
     st.write("CSVデータの表示:")
     st.write(data)
