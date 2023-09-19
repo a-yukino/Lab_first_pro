@@ -1,66 +1,23 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 
-streamlit config set [theme]
+# CSVファイルの読み込み
+@st.cache  # データをキャッシュして高速化
+def load_data():
+    data = pd.read_csv('pro_1.csv', encoding='utf-8')  # CSVファイルのパスを指定
+    return data
 
-[theme]
-backgroundColor = "#CCBCBC"
-font = "Times New Roman"
-textColor = "#000000"
-sidebar = { "backgroundColor": "#FFFFFF", "contrast": 1.2 }
+data = load_data()
 
-df = pd.read_csv('clean_data.csv',encoding='shift_jis')
+# ボタンの表示
+if st.button("データを表示/非表示"):
+    if 'show_data' not in st.session_state:
+        st.session_state.show_data = True  # 初回クリック時に変数を初期化
+    st.session_state.show_data = not st.session_state.show_data  # ステートを切り替え
 
-st.title('バレーボールW杯出場女子選手のデータ一覧')
-st.write(df)
-
-st.write('国別のデータ')
-
-if st.button('ロシア'):
-    df = pd.read_csv('pro_1.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('ブラジル'):
-    df = pd.read_csv('pro_2.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('日本'):
-    df = pd.read_csv('pro_3.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('ブルガリア'):
-    df = pd.read_csv('pro_4.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('セルビア'):
-    df = pd.read_csv('pro_5.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('メキシコ'):
-    df = pd.read_csv('pro_6.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('キューバ'):
-    df = pd.read_csv('pro_7.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('中国'):
-    df = pd.read_csv('pro_8.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('エジプト'):
-    df = pd.read_csv('pro_9.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('ペルー'):
-    df = pd.read_csv('pro_10.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('イタリア'):
-    df = pd.read_csv('pro_11.csv',encoding='utf-8')
-    st.write(df)
-
-if st.button('トルコ'):
-    df = pd.read_csv('pro_12.csv',encoding='utf-8')
-    st.write(df)
+# データの表示/非表示
+if st.session_state.show_data:
+    st.write("CSVデータの表示:")
+    st.write(data)
+else:
+    st.write("CSVデータは非表示です。")
