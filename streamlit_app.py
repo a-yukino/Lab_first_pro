@@ -24,7 +24,6 @@ if st.session_state.show_data:
 else:
     st.write("")
 
-@st.cache
 def load_data():
     data = pd.read_csv('pro_2.csv', encoding='utf-8')
     return data
