@@ -188,3 +188,21 @@ if st.session_state.show_data12:
     st.write(data12)
 else:
     st.write("")
+
+
+def home_page():
+    st.title("ホームページ")
+    st.write("これはホームページです。")
+
+def about_page():
+    st.title("About ページ")
+    st.write("これはAboutページです。")
+
+# サイドバーの選択肢を作成
+page = st.sidebar.selectbox("ページを選択", ("ホーム", "About"))
+
+# 選択されたページを表示
+if page == "ホーム":
+    home_page()
+elif page == "About":
+    about_page()
