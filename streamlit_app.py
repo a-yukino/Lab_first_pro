@@ -2,16 +2,12 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('clean_data.csv',encoding='shift_jis')
-
-page = st.sidebar.selectbox("ページを選択", ("データセット", "戦略考察"))
-
-st.title('バレーボールW杯出場女子選手のデータ一覧')
-st.write(df)
-
-st.write('国別のデータ')
-
 def home_page():
+    df = pd.read_csv('clean_data.csv',encoding='shift_jis')
+    page = st.sidebar.selectbox("ページを選択", ("データセット", "戦略考察"))
+    st.title('バレーボールW杯出場女子選手のデータ一覧')
+    st.write(df)
+    st.write('国別のデータ')
     @st.cache
     def load_data1():
         data1 = pd.read_csv('pro_1.csv', encoding='utf-8')
