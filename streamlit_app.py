@@ -202,7 +202,7 @@ def about_page():
     st.write("※ポジションとスパイクの最高到達点とブロックの高さの関係を見たい場合は以下のボタンを押してください。")
     if st.button("関係性についてはこのボタンをクリック"):
         df = pd.read_csv('spike.csv', encoding='utf-8')
-        st.bar_chart(df[['position_number', 'spike']])
+        st.bar_chart(df[['spike']])
     
     selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
