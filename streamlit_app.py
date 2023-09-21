@@ -198,6 +198,11 @@ def about_page():
     st.write("下の図はバレーボールにおける基本的なスタートポジションです。")
     
     st.image("position.jpg", caption="画像のキャプション", use_column_width=True)
+
+    st.write("※ポジションとスパイクの最高到達点とブロックの高さの関係を見たい場合は以下のボタンを押してください。")
+    if st.button("関係性についてはこのボタンをクリック"):
+        df = pd.read_csv('clean_data.csv',encoding='shift_jis')
+        st.bar_chart(df[''])
     
     selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
