@@ -201,27 +201,24 @@ def about_page():
 
     st.write("※ポジションとスパイクの最高到達点とブロックの高さの関係を見たい場合は以下のボタンを押してください。")
     if st.button("関係性についてはこちらから"):
-        
         options = ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"]
-        
         selected_option = st.selectbox("データセットを選択", options)
-        options = ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"]
         
         if selected_option == "セッター":
-            df = pd.read_csv("spike1.csv")
-            st.bar_chart(df)    
+            data1 = pd.read_csv("spike1.csv")
+            st.bar_chart(data1)    
         elif selected_option == "アウトサイドヒッター":
-            df = pd.read_csv("spike2.csv")
-            st.bar_chart(df)   
+            data2 = pd.read_csv("spike2.csv")
+            st.bar_chart(data2)   
         elif selected_option == "ミドルブロッカー":
-            df = pd.read_csv("spike3.csv")
-            st.bar_chart(df)   
+            data3 = pd.read_csv("spike3.csv")
+            st.bar_chart(data3)   
         elif selected_option == "オポジット":
-            df = pd.read_csv("spike4.csv")
-            st.bar_chart(df)    
+            data4 = pd.read_csv("spike4.csv")
+            st.bar_chart(data4)    
         elif selected_option == "リベロ":
-            df = pd.read_csv("spike6.csv")
-            st.bar_chart(df)
+            data6 = pd.read_csv("spike6.csv")
+            st.bar_chart(data6)
         
     selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
