@@ -206,19 +206,33 @@ def about_page():
         
         if selected_option == "セッター":
             data1 = pd.read_csv("spike1.csv")
-            st.bar_chart(data1)    
-        elif selected_option == "アウトサイドヒッター":
+            st.bar_chart(data1)
+        else:
+        st.write("")
+        
+        if selected_option == "アウトサイドヒッター":
             data2 = pd.read_csv("spike2.csv")
             st.bar_chart(data2)   
-        elif selected_option == "ミドルブロッカー":
+        else:
+        st.write("")
+        
+        if selected_option == "ミドルブロッカー":
             data3 = pd.read_csv("spike3.csv")
             st.bar_chart(data3)   
-        elif selected_option == "オポジット":
+        else:
+        st.write("")
+    
+        if selected_option == "オポジット":
             data4 = pd.read_csv("spike4.csv")
-            st.bar_chart(data4)    
-        elif selected_option == "リベロ":
+            st.bar_chart(data4)
+        else:
+        st.write("")
+            
+        if selected_option == "リベロ":
             data6 = pd.read_csv("spike6.csv")
             st.bar_chart(data6)
+        else:
+        st.write("")
         
     selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
