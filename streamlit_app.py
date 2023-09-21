@@ -201,22 +201,23 @@ def about_page():
 
     st.write("※ポジションとスパイクの最高到達点とブロックの高さの関係を見たい場合は以下のボタンを押してください。")
     if st.button("関係性についてはこちらから"):
+        
         options = ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"]
         selected_option = st.selectbox("データセットを選択", options)
         
         if selected_option == "セッター":
             df = pd.read_csv("spike1.csv")
             st.bar_chart(df)
-        elif selected_option == "アウトサイドヒッター":
+        if selected_option == "アウトサイドヒッター":
             df = pd.read_csv("spike2.csv")
             st.bar_chart(df)
-        elif selected_option == "ミドルブロッカー":
+        if selected_option == "ミドルブロッカー":
             df = pd.read_csv("spike3.csv")
             st.bar_chart(df)
-        elif selected_option == "オポジット":
+        if selected_option == "オポジット":
             df = pd.read_csv("spike4.csv")
             st.bar_chart(df)
-        elif selected_option == "リベロ":
+        if selected_option == "リベロ":
             df = pd.read_csv("spike6.csv")
             st.bar_chart(df)
         
