@@ -194,10 +194,10 @@ def home_page():
 def about_page():
     st.title("戦略考察")
     st.write("選手のスパイクの最高到達点、ブロックの高さのデータより、攻撃力が上がるフォーメーションの提案をします。")
-
+    
 　　 selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
-    
+
 if page == "データセット":
     home_page()
 elif page == "戦略考察":
