@@ -201,8 +201,22 @@ def about_page():
 
     st.write("※ポジションとスパイクの最高到達点とブロックの高さの関係を見たい場合は以下のボタンを押してください。")
     if st.button("関係性についてはこのボタンをクリック"):
-        df = pd.read_csv('spike.csv', encoding='utf-8')
-        st.bar_chart(df[['spike']])
+        selected_item = st.selectbox("ポジションの選択をしてください", ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"])
+
+        # 選択されたアイテムに対応するデータを用意
+        data = {
+            "セッター": pd.read_csv('spike1.csv',ncoding='utf-8'),
+            "アウトサイドヒッター": pd.read_csv('spike2.csv',ncoding='utf-8'),
+            "ミドルブロッカー": pd.read_csv('spike3.csv',ncoding='utf-8'),
+            "オポジット":pd.read_csv('spike4.csv',ncoding='utf-8'),
+            "リベロ":pd.read_csv('spike6.csv',ncoding='utf-8'),
+        }
+        # 選択されたアイテムのデータを表示
+        if selected_item in data:
+            st.write("選択されたアイテム:", selected_item)
+            st.write("アイテムのデータ:", data[selected_item])
+        else:
+            st.warning("アイテムが選択されていません")
     
     selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
