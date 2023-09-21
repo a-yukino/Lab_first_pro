@@ -195,6 +195,8 @@ def about_page():
     st.title("戦略考察")
     st.write("選手のスパイクの最高到達点、ブロックの高さのデータより、攻撃力が上がるフォーメーションの提案をします。")
 
+    st.image("position.jpg", caption="画像のキャプション", use_column_width=True)
+    
     st.image("Lab_first_pro/position.jpg", 
          caption="画像のキャプション", 
          use_column_width=True,  # コラムの幅に合わせる
