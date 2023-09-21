@@ -200,30 +200,27 @@ def about_page():
     st.image("position.jpg", caption="画像のキャプション", use_column_width=True)
 
     st.write("※ポジションとスパイクの最高到達点とブロックの高さの関係を見たい場合は以下のボタンを押してください。")
-    if st.button("関係性についてはこのボタンをクリック"):
+    if st.button("関係性についてはこちらから"):
         
         options = ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"]
+        
         selected_option = st.selectbox("データセットを選択", options)
         
         if selected_option == "セッター":
-            df1 = pd.read_csv("spike1.csv")
-            st.bar_chart(df1)
-            
+            df = pd.read_csv("spike1.csv")
+            st.bar_chart(df)    
         elif selected_option == "アウトサイドヒッター":
-            df2 = pd.read_csv("spike2.csv")
-            st.bar_chart(df2)
-            
+            df = pd.read_csv("spike2.csv")
+            st.bar_chart(df)   
         elif selected_option == "ミドルブロッカー":
-            df3 = pd.read_csv("spike3.csv")
-            st.bar_chart(df3)
-            
+            df = pd.read_csv("spike3.csv")
+            st.bar_chart(df)   
         elif selected_option == "オポジット":
-            df4 = pd.read_csv("spike4.csv")
-            st.bar_chart(df4)
-            
+            df = pd.read_csv("spike4.csv")
+            st.bar_chart(df)    
         elif selected_option == "リベロ":
-            df6 = pd.read_csv("spike6.csv")
-            st.bar_chart(df6)
+            df = pd.read_csv("spike6.csv")
+            st.bar_chart(df)
         
     selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
