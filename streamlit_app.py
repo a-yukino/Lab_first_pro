@@ -194,6 +194,8 @@ def home_page():
 def about_page():
     st.title("戦略考察")
     st.write("選手のスパイクの最高到達点、ブロックの高さのデータより、攻撃力が上がるフォーメーションの提案をします。")
+
+　　 st.selectbox("組み合わせを選択", ("データセット", "戦略考察"))
     
 if page == "データセット":
     home_page()
