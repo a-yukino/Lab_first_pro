@@ -202,8 +202,6 @@ def about_page():
     st.write("※ポジションとスパイクの最高到達点とブロックの高さの関係を見たい場合は以下のボタンを押してください。")
     if st.button("関係性についてはこのボタンをクリック"):
         selected_item = st.selectbox("ポジションの選択をしてください", ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"])
-
-        # 選択されたアイテムに対応するデータを用意
         data = {
             "セッター": pd.read_csv('spike1.csv',encoding='utf-8'),
             "アウトサイドヒッター": pd.read_csv('spike2.csv',encoding='utf-8'),
@@ -211,7 +209,6 @@ def about_page():
             "オポジット":pd.read_csv('spike4.csv',encoding='utf-8'),
             "リベロ":pd.read_csv('spike6.csv',encoding='utf-8'),
         }
-
         if selected_item in data:
             data_path = data[selected_item]
             df = pd.read_csv(data_path, encoding='utf-8')  # 正しいencodingを指定する
