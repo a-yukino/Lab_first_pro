@@ -205,34 +205,15 @@ def about_page():
         selected_option = st.selectbox("データセットを選択", options)
         
         if selected_option == "セッター":
-            data1 = pd.read_csv("spike1.csv")
-            st.bar_chart(data1)
-        else:
-        st.write("")
-        
-        if selected_option == "アウトサイドヒッター":
-            data2 = pd.read_csv("spike2.csv")
-            st.bar_chart(data2)   
-        else:
-        st.write("")
-        
-        if selected_option == "ミドルブロッカー":
-            data3 = pd.read_csv("spike3.csv")
-            st.bar_chart(data3)   
-        else:
-        st.write("")
-    
-        if selected_option == "オポジット":
-            data4 = pd.read_csv("spike4.csv")
-            st.bar_chart(data4)
-        else:
-        st.write("")
-            
-        if selected_option == "リベロ":
-            data6 = pd.read_csv("spike6.csv")
-            st.bar_chart(data6)
-        else:
-        st.write("")
+            df = pd.read_csv("spike1.csv")
+        elif selected_option == "アウトサイドヒッター":
+            df = pd.read_csv("spike2.csv")
+        elif selected_option == "ミドルブロッカー":
+            df = pd.read_csv("spike3.csv")
+        elif selected_option == "オポジット":
+            df = pd.read_csv("spike4.csv")
+        elif selected_option == "リベロ":
+            df = pd.read_csv("spike6.csv")
         
     selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
