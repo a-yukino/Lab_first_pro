@@ -204,7 +204,6 @@ def about_page():
         
         options = ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"]
         selected_option = st.selectbox("データセットを選択", options)
-        
         if selected_option == "セッター":
             df = pd.read_csv("spike1.csv")
             st.bar_chart(df['spike'])
@@ -220,9 +219,18 @@ def about_page():
         if selected_option == "リベロ":
             df = pd.read_csv("spike6.csv")
             st.bar_chart(df['spike'])
+
+    
+    st.write("日本が勝つために攻撃力が上がると考えられるポジションの提案")
         
-    selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
-    st.write("選択されたオプション:", selected_option)
+    st.write("日本の対戦国を選択してください。")
+
+    options = ["ロシア", "ブラジル", "ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"]
+    selected_option = st.selectbox("データセットを選択", options)
+    if selected_option == "ロシア":
+    
+        
+    
 
 if page == "データセット":
     home_page()
