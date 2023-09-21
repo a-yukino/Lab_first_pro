@@ -205,11 +205,11 @@ def about_page():
 
         # 選択されたアイテムに対応するデータを用意
         data = {
-            "セッター": pd.read_csv('spike1.csv',encoding='shift_jis'),
-            "アウトサイドヒッター": pd.read_csv('spike2.csv',encoding='shift_jis'),
-            "ミドルブロッカー": pd.read_csv('spike3.csv',encoding='shift_jis'),
-            "オポジット":pd.read_csv('spike4.csv',encoding='shift_jis'),
-            "リベロ":pd.read_csv('spike6.csv',encoding='shift_jis'),
+            "セッター": pd.read_csv('spike1.csv',encoding='utf-8'),
+            "アウトサイドヒッター": pd.read_csv('spike2.csv',encoding='utf-8'),
+            "ミドルブロッカー": pd.read_csv('spike3.csv',encoding='utf-8'),
+            "オポジット":pd.read_csv('spike4.csv',encoding='utf-8'),
+            "リベロ":pd.read_csv('spike6.csv',encoding='utf-8'),
         }
 
         if selected_item in data:
