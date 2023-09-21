@@ -224,10 +224,6 @@ def about_page():
     st.write("日本が勝つために攻撃力が上がると考えられるポジションの提案")
         
     st.write("日本の対戦国を選択してください。")
-
-    options = ["ロシア", "ブラジル", "ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"]
-    selected_option = st.selectbox("データセットを選択", options)
-    if selected_option == "ロシア":
     
         
     
