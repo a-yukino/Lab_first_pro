@@ -203,11 +203,11 @@ def about_page():
     if st.button("関係性についてはこのボタンをクリック"):
         selected_item = st.selectbox("ポジションの選択をしてください", ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"])
         data = {
-            "セッター": pd.read_csv(spike1.csv),
-            "アウトサイドヒッター": pd.read_csv(spike2.csv),
-            "ミドルブロッカー": pd.read_csv(spike3.csv),
-            "オポジット":pd.read_csv(spike4.csv),
-            "リベロ":pd.read_csv(spike6.csv),
+            "セッター": pd.read_csv("spike1.csv"),
+            "アウトサイドヒッター": pd.read_csv("spike2.csv"),
+            "ミドルブロッカー": pd.read_csv("spike3.csv"),
+            "オポジット":pd.read_csv("spike4.csv"),
+            "リベロ":pd.read_csv("spike6.csv"),
         }
         if selected_item in data:
             data_path = data[selected_item]
