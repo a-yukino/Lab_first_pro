@@ -194,6 +194,14 @@ def home_page():
 def about_page():
     st.title("戦略考察")
     st.write("選手のスパイクの最高到達点、ブロックの高さのデータより、攻撃力が上がるフォーメーションの提案をします。")
+
+    st.image("position.jpeg", 
+         caption="画像のキャプション", 
+         use_column_width=True,  # コラムの幅に合わせる
+         width=300,  # 幅を指定
+         height=200,  # 高さを指定
+         format="JPEG"  # 画像のフォーマットを指定
+         )
     
     selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
