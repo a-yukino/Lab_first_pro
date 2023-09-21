@@ -202,21 +202,23 @@ def about_page():
     st.write("※ポジションとスパイクの最高到達点とブロックの高さの関係を見たい場合は以下のボタンを押してください。")
     if st.button("関係性についてはこのボタンをクリック"):
         selected_item = st.selectbox("ポジションの選択をしてください", ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"])
-        data = {
-            "セッター": pd.read_csv("spike1.csv"),
-            "アウトサイドヒッター": pd.read_csv("spike2.csv"),
-            "ミドルブロッカー": pd.read_csv("spike3.csv"),
-            "オポジット":pd.read_csv("spike4.csv"),
-            "リベロ":pd.read_csv("spike6.csv"),
-        }
-        if selected_item in data:
-            data_path = data[selected_item]
-            df = pd.read_csv(data_path, encoding='utf-8')  # 正しいencodingを指定する
-            st.write("選択されたアイテム:", selected_item)
-            st.write("アイテムのデータ:")
-            st.write(df)
-        else:
-            st.warning("アイテムが選択されていません")
+        options = ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"]
+        selected_option = st.selectbox("データセットを選択", options)
+        if selected_option == "セッター":
+            df1 = pd.read_csv("spike1.csv")
+            st.bar_chart(df1)
+        elif selected_option == "アウトサイドヒッター":
+            df2 = pd.read_csv("spike2.csv")
+            st.bar_chart(df2)
+        elif selected_option == "ミドルブロッカー":
+            df3 = pd.read_csv("spike3.csv")
+            st.bar_chart(df3)
+        elif selected_option == "オポジット":
+            df4 = pd.read_csv("spike4.csv")
+            st.bar_chart(df4)
+        elif selected_option == "リベロ":
+            df6 = pd.read_csv("spike6.csv")
+            st.bar_chart(df6)
         
     selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
