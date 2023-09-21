@@ -205,19 +205,22 @@ def about_page():
 
         # 選択されたアイテムに対応するデータを用意
         data = {
-            "セッター": pd.read_csv('spike1.csv',ncoding='utf-8'),
-            "アウトサイドヒッター": pd.read_csv('spike2.csv',ncoding='utf-8'),
-            "ミドルブロッカー": pd.read_csv('spike3.csv',ncoding='utf-8'),
-            "オポジット":pd.read_csv('spike4.csv',ncoding='utf-8'),
-            "リベロ":pd.read_csv('spike6.csv',ncoding='utf-8'),
+            "セッター": pd.read_csv('spike1.csv',encoding='utf-8'),
+            "アウトサイドヒッター": pd.read_csv('spike2.csv',encoding='utf-8'),
+            "ミドルブロッカー": pd.read_csv('spike3.csv',encoding='utf-8'),
+            "オポジット":pd.read_csv('spike4.csv',encoding='utf-8'),
+            "リベロ":pd.read_csv('spike6.csv',encoding='utf-8'),
         }
-        # 選択されたアイテムのデータを表示
+
         if selected_item in data:
+            data_path = data[selected_item]
+            df = pd.read_csv(data_path, encoding='utf-8')  # 正しいencodingを指定する
             st.write("選択されたアイテム:", selected_item)
-            st.write("アイテムのデータ:", data[selected_item])
+            st.write("アイテムのデータ:")
+            st.write(df)
         else:
             st.warning("アイテムが選択されていません")
-    
+        
     selected_option = st.selectbox("勝たせたい国を選択", ("ロシア", "ブラジル", "日本","ブルガリア","セルビア","メキシコ","キューバ","中国","エジプト","ペルー","イタリア","トルコ"))
     st.write("選択されたオプション:", selected_option)
 
