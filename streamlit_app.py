@@ -192,8 +192,8 @@ def home_page():
         st.write("")
 
 def about_page():
-    st.title("About ページ")
-    st.write("これはAboutページです。")
+    st.title("戦略考察")
+    st.write("選手のスパイクの最高到達点、ブロックの高さのデータより、攻撃力が上がるフォーメーションの提案をします。")
     
 if page == "データセット":
     home_page()
