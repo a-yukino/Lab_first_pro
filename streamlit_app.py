@@ -205,6 +205,7 @@ def about_page():
         options = ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"]
         
         selected_option = st.selectbox("データセットを選択", options)
+        options = ["セッター", "アウトサイドヒッター", "ミドルブロッカー","オポジット","リベロ"]
         
         if selected_option == "セッター":
             df = pd.read_csv("spike1.csv")
