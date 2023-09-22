@@ -223,11 +223,9 @@ def about_page():
     
     st.write("日本が勝つために攻撃力が上がると考えられるポジションの提案")
         
-    st.write("日本の対戦国を選択してください。")
-    
-        
-    
+    st.write("日本が勝つために攻撃力を高めるためのポジションは以下のパターンがあげられる。")
 
+    st.image("position.jpg", caption="画像のキャプション", use_column_width=True)
 if page == "データセット":
     home_page()
 elif page == "戦略考察":
